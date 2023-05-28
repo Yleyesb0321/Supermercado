@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Oswald', sans-serif;
+}
+
+/*^ Loader de Carga*/
+.contenedor_loader{/*Maneja el contenedor del loading*/
+  background: transparent;
+  backdrop-filter: blur(150px);
+  /*background-color: rgba(250, 240, 245, 0.9);*/
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 9999;
+  transition: all 12s;
+}
+
+.loader{
+  border: 15px solid #162938;
+  border-top-color: #07f8d0;
+  border-top-style: groove;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+
+  /*Para centralo en la pantalla*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  animation: load .5s linear infinite;
+}
+@keyframes load {/*Maneja la animacion*/
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+/*^ Fin Loader de Carga*/
+
+body{
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(0deg, rgba(0,0,0,.8), rgba(0,0,0,.8)), url('../Img/super5.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/*^ Encabezado */
+header{
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+  background: #2d3436;
+}
+
+h1{
+  top: 80px;
+  font-size: 2em;
+  font-family: Oswald;
+  color: white;
+  text-align: center;
+  user-select: none;
+}
+
+/*^ Fin Encabezado */
+
+/*^ Nav */
+.nav a{
+  position: relative;
+  color:  #f5faf9; 
+  font-weight: bold;
+  font-size: 1.7em;
+  text-decoration: none;
+  margin-left: 40px;
+}
+.nav a::after{/*Maneja la barra debajo de los links*/
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  border-radius: 5px;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .5s;
+}
+.nav a:hover::after{/*Maneja el efcto de las barras debajo de los links*/
+  transform-origin: left;
+  transform: scaleX(1);
+}
+.nav .btn_logout{/*Maneja el botob de cerrar sesion*/
+  width: 150px;
+  height: 50px;
+  background: transparent;
+  border: 2px solid #fff;
+  outline: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 1.3em;
+  color: #fff;
+  font-weight: 500;
+  margin-left: 40px;
+  transition: .5s;
+}
+.nav .btn_logout:hover{
+  background: #fff;
+  color: #162938;
+}
+/*^ Fin Nav */
+h2{
+  font-size: 50px;
+  font-family: Oswald;
+  color: white;
+  text-align: center;
+  margin-top: 10rem;
+  
+}
+
+/*^ Pie de Pagina */
+footer{/*Maneja todo el contenedor */
+  align-items: center;
+  text-align: center;
+  margin-top: 370px;
+  background: #2d3436;
+  
+}
+hr{/*Maneja la linea separadora*/
+  border: 2px solid white;
+  margin-top: 70px;
+}
+.logos{/*Maneja la imagen del footer*/
+  width: 5rem;
+  margin: 50px auto 10px auto;
+}
+.copy{/*Maneja el texto de copyright*/
+  margin: 20px;
+  font-size: 30px;
+  color: white;
+
+}
+.ela{
+  margin-top:40px;
+  font-size: 25px;
+  font-weight: 300;
+}
+/*^ Fin Pie de Pagina */
