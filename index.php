@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon"><!--? Agregamos la imagen de la pagina-->
-  <link href="./css/style.css" rel="stylesheet" >
-  
+  <link href="./css/style.css" rel="stylesheet">
+
+
+  <!--Sweet Alert 2-->
+  <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 
   <title>Supermercados Megaplus</title>
-  
+
 </head>
+
 <body>
-  <div class="contenedor_loader">
+ <!-- <div class="contenedor_loader">
     <div class="loader"></div>
-  </div>
+  </div> -->
   <header>
     <img src="./Img/logo.png" alt="logo" class="logo_img">
-      <h1 class="logo"> SUPERMERCADOS MEGAPLUS </h1>
-      <nav class="nav">
-        <button class="btn_login">Iniciar Sesión</button>
-      </nav>
+    <h1 class="logo"> SUPERMERCADOS MEGAPLUS </h1>
+    <nav class="nav">
+      <button class="btn_login">Iniciar Sesión</button>
+    </nav>
   </header>
 
   <main>
@@ -34,31 +40,37 @@
 
         <div class="container_login">
           <h2 class="login_title">Iniciar Sesión</h2>
-          <form method="post" class="form_login">
+          <form action="comprobar_login.php" method="post" class="form_login">
             <div class="login-form">
-              <input type="text" id="name" required><span class="barra"></span>
+              <input type="varchar" name="usuario" id="name"><span class="barra"></span>
               <label for="">Usuario</label>
             </div>
-            
+
             <div class="login-form">
-              <input type="password" id="password" required><span class="barra"></span>
+              <input type="password" name="clave" id="password"><span class="barra"></span>
               <label for="">Password</label>
             </div>
 
             <div class="login-form">
-              <input type="text" id="rol" required><span class="barra"></span>
+              <input type="text" name="rol" id="rol"><span class="barra"></span>
               <label for="">Rol</label>
             </div>
-            
-            <button id="boton" type="submit" class="btn_link">Ingresar</button>
 
-            <p class="forget"><a href="#">¿Olvidastes tu Contraseña?</a></p>
+            <button id="boton" name="btn_Ingresar" type="submit" class="btn_link">Ingresar</button>
+
+            <p name="olvidar" class="forget"><a href="#">¿Olvidastes tu Contraseña?</a></p>
+
+            <!--Controlador para el Ingreso-->
+            <?php
+            include 'controlador/ingresar.php';
+            ?>
+
           </form>
         </div>
       </div>
     </section>
   </main>
-  
+
   <footer>
     <hr>
     <img class="logos" src="Img/logo.png">
@@ -68,4 +80,5 @@
   <!--? Aqui van los script de JS-->
   <script src="./js/login.js"></script>
 </body>
+
 </html>

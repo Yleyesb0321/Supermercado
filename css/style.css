@@ -241,7 +241,7 @@ input:focus~.barra::before{/*Maneja efectos de las lineas*/
 
 .forget a:hover{/*Maneja el efecto del link*/
   text-decoration: underline;
-  color: #162938;
+  color: #0be4d9;
 }
 
 /*^ Fin Contenido */
