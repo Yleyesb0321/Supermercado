@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Oswald', sans-serif;
+}
+
+/*^ Loader de Carga*/
+.contenedor_loader{/*Maneja el contenedor del loading*/
+  background: transparent;
+  backdrop-filter: blur(150px);
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  transition: all 8s;
+}
+
+.loader{
+  border: 15px solid #162938;
+  border-top-color: #07f8d0;
+  border-top-style: groove;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+
+  /*Para centralo en la pantalla*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  animation: load .5s linear infinite;
+}
+@keyframes load {/*Maneja la animacion*/
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+/*^ Fin Loader de Carga*/
+
+body{
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 100%;
+  background: linear-gradient(0deg, rgba(0,0,0,.8), rgba(0,0,0,.8)), url('../Img/super5.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+/*/
+/*^ Encabezado */
+header{
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+  background: #2d3436;
+}
+
+h1{
+  top: 80px;
+  font-size: 2em;
+  font-family: Oswald;
+  color: white;
+  text-align: center;
+  user-select: none;
+}
+
+/*^ Fin Encabezado */
+
+/*^ Nav */
+.nav a{
+  position: relative;
+  color:  #f5faf9; 
+  font-weight: bold;
+  font-size: 1.7em;
+  text-decoration: none;
+  margin-left: 40px;
+}
+.nav a::after{/*Maneja la barra debajo de los links*/
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  border-radius: 5px;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .5s;
+}
+.nav a:hover::after{/*Maneja el efcto de las barras debajo de los links*/
+  transform-origin: left;
+  transform: scaleX(1);
+}
+.nav .btn_logout{/*Maneja el boton de cerrar sesion*/
+  width: 150px;
+  height: 50px;
+  background: transparent;
+  border: 2px solid #fff;
+  outline: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 1.3em;
+  color: #fff;
+  font-weight: 500;
+  margin-left: 40px;
+  transition: .5s;
+}
+.nav .btn_logout:hover{
+  background: #fff;
+  color: #162938;
+}
+/*^ Fin Nav */
+
+/*^ Contenido */
+.container_texts{
+  color: #f7f2f2;
+}
+.container_container{/*Maneja el contenedor del div*/
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5em;
+  align-items: center;
+  background-color: rgba(49, 42, 42, 0.2);
+  text-align: center;
+}
+
+.container_login{/*Maneja el div del login*/
+  position: relative;
+  height: 40rem;
+  width: 30rem;
+  background:transparent;
+  border: 2px solid rgba(255, 255, 255, .5);
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  box-shadow: 7px 13px 37px rgba(0, 0, 0, .5);
+  display: block;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 30rem;
+  border-bottom: 5px solid white;
+  transform: scale(1);
+  overflow:hidden;
+  transition: transform .5s ease;
+}
+
+.login_title{/*Maneja el titulo del login*/
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.form_login{/*Maneja el contenedor de la form*/
+  width: 100%;
+  margin: auto;
+}
+
+.login-form{/*Maneja el div del input*/
+  position:relative;
+  margin: 45px;
+}
+input{/*Maneja el cuadro de texto del input*/
+  background: none;
+  color: #c6c6c6;
+  font-size: 18px;
+  padding: 10px 5px;
+  display: block;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid white;
+}
+input:focus{/*Maneja el efecto del input*/
+  outline: none;
+  color: white;
+}
+label{/*Maneja los nombres de los input*/
+  color: white;
+  position: absolute;
+  font-size: 16px;
+  left: 5px;
+  top: 10px;
+  transition: 0.5s ease-in-out all;
+  pointer-events: none;
+}
+input:focus~label, input:valid~label{/*Maneja el efecto de los input y label*/
+  top: -14px;
+  font-size: 12px;
+  color: #f9fcfc;
+}
+.barra{/*Maneja la linea de input*/
+  display: block;
+  position: relative;
+  width: 100%;
+}
+.barra::before{/*Maneja el efecto de la linea del input*/
+  content: "";
+  height: 2px;
+  width: 0%;
+  bottom: 0;
+  position: absolute;
+  background: linear-gradient(to right, #162938, #3e9fb9 );
+  transition: 0.3s ease width;
+  left: 0;
+}
+input:focus~.barra::before{/*Maneja efectos de las lineas*/
+  width: 105%;
+}
+
+.btn_link{/*Maneja el boton*/
+  background: #162938;
+  border: none;
+  display: block;
+  width: 80%;
+  margin: 10px auto;
+  color: white;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.6s ease-in-out;
+  text-decoration: none;
+  font-size: 20px;
+
+}
+.btn_link:hover{/*Maneja el efecto del boton*/
+  background:transparent;
+  border: 4px solid #162938;
+}
+
+
+/*^ Fin Contenido */
+
+/*^ Pie de Pagina */
+footer{/*Maneja todo el contenedor*/
+  align-items: center;
+  text-align: center;
+  margin-top: 370px;
+  background: #2d3436;
+}
+hr{/*Maneja la linea separadora*/
+  border: 2px solid white;
+  margin-top: 70px;
+}
+.logos{/*Maneja la imagen del footer*/
+  width: 5rem;
+  margin: 50px auto 10px auto;
+}
+.copy{/*Maneja el texto de copyright*/
+  margin: 20px;
+  font-size: 30px;
+  color: white;
+}
+.ela{
+  margin-top:40px;
+  font-size: 25px;
+  font-weight: 300;
+}
+
+/*^ Fin Pie de Pagina */
