@@ -19,9 +19,11 @@
 </head>
 
 <body>
- <!-- <div class="contenedor_loader">
+  <!--Carga el load de la pagina
+  <div class="contenedor_loader">
     <div class="loader"></div>
-  </div> -->
+  </div> 
+  -->
   <header>
     <img src="./Img/logo.png" alt="logo" class="logo_img">
     <h1 class="logo"> SUPERMERCADOS MEGAPLUS </h1>
@@ -40,7 +42,7 @@
 
         <div class="container_login">
           <h2 class="login_title">Iniciar Sesión</h2>
-          <form action="comprobar_login.php" method="post" class="form_login">
+          <form action="" method="post" class="form_login">
             <div class="login-form">
               <input type="varchar" name="usuario" id="name"><span class="barra"></span>
               <label for="">Usuario</label>
@@ -58,7 +60,7 @@
 
             <button id="boton" name="btn_Ingresar" type="submit" class="btn_link">Ingresar</button>
 
-            <p name="olvidar" class="forget"><a href="#">¿Olvidastes tu Contraseña?</a></p>
+            <p name="olvidar" class="forget"><a>¿Olvidastes tu Contraseña?</a></p>
 
             <!--Controlador para el Ingreso-->
             <?php
