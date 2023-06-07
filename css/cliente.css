@@ -121,21 +121,25 @@ h1{
 /*^ Fin Nav */
 
 /*^ Contenido */
-.container_texts{
-  color: #f7f2f2;
-}
+
 .container_container{/*Maneja el contenedor del div*/
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5em;
-  align-items: center;
   background-color: rgba(49, 42, 42, 0.2);
   text-align: center;
+}
+.container_texts{
+  display: flex;
+  color: #f7f2f2;
+  justify-content: space-between;
+  margin-right: 1rem;
+}
+.container_subtitle{/*Maneja el subtitulo h2*/
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .container_login{/*Maneja el div del login*/
   position: relative;
-  height: 40rem;
+  height: 45rem;
   width: 30rem;
   background:transparent;
   border: 2px solid rgba(255, 255, 255, .5);

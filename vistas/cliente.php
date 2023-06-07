@@ -1,3 +1,16 @@
+<?php
+  //Iniciamos la DB para consultar la tabla de clientes
+  include_once '../modelo/conectar_cliente.php';
+  $objeto = new Conexx();
+  $conex = $objeto->Conect();
+
+  $consulta = "SELECT * FROM clientes";
+  $resultado = $conex->prepare($consulta);
+  $resultado->execute();
+  $clientes = $resultado->fetchAll(PDO::FETCH_ASSOC);
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -22,8 +35,12 @@
   <header>
     <h1 class="logo"> SUPERMERCADOS <br> MEGAPLUS </h1>
     <nav class="nav">
-      <a href="cliente.php">Clientes</a>
-      <button class="btn_logout">Cerrar</button>
+      <div class="container_container">
+        <div class="container_texts">
+          <h2 class="container_subtitle">Clientes</h2>
+          <button class="btn_logout">Cerrar</button>
+        </div>
+      </div>
     </nav>
   </header>
 
@@ -33,6 +50,20 @@
         <div class="container_login">
           <h2 class="login_title">Registro de Clientes</h2>
           <form action="" method="post" class="form_login">
+            <div class="login-form">
+              <label>Cajero</label>
+              <select name="idEmpleado">
+                <option>---Seleccione---</option>
+                  <?php
+                    foreach($clientes as $filtro){
+                  ?>
+                  <option><?php echo $filtro['idEmpleado']?></option>
+                  <?php
+                  }
+                  ?>
+              </select><br><br>
+            </div>
+
             <div class="login-form">
               <input type="text" name="nombre" id="name"><span class="barra"></span>
               <label for="">Nombres</label>
@@ -58,7 +89,11 @@
               <label for="">Correo</label>
             </div>
 
-            <button id="boton" name="btn_Registrar" type="submit" class="btn_link">Registrar</button>
+            <button id="boton" name="btn_registrar" type="submit" class="btn_link">Registrar</button>
+
+            <?php 
+              include '../controlador/registrar.php'
+            ?>
 
           </form>
         </div>
@@ -68,7 +103,8 @@
   <footer>
     <hr>
     <img class="logos" src="../Img/logo.png">
-    <p class="copy">&copy Supermercados Megaplus 2022 || Todos los derechos reservados ❤ <br> <span class="ela">Claudia Padilla // Joan Horta // Yecid Leyes</span></p>
+    <p class="copy">&copy Supermercados Megaplus 2022 || Todos los derechos reservados ❤ <br> 
+    <span class="ela">Claudia Padilla // Joan Horta // Yecid Leyes</span></p>
   </footer>
 
   
