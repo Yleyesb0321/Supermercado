@@ -15,9 +15,7 @@ if (isset($_POST['btn_registrar'])) {
 
 
   if ($CliNombre == "" || $CliApellido == "" || $CliIdentificacion == "" || $CliTelefono == "" || $CliCorreo == "" || $idEmpleado == "") {
-    
     echo "<script> Swal.fire('Todos los Campos son obligatorios')</script>";
-
   } else {
     $registrar = mysqli_query(
       $conectar,

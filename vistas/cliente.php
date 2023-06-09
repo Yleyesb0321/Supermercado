@@ -49,7 +49,7 @@ $clientes = $resultado->fetchAll(PDO::FETCH_ASSOC);
       <div class="container_container">
         <div class="container_login">
           <h2 class="login_title">Registro de Clientes</h2>
-          <form action="../controlador/registrar.php" method="post" class="form_login">
+          <form action="" method="post" class="form_login">
             <div class="login-form">
               <input type="text" name="nombre" id="name"><span class="barra"></span>
               <label for="">Nombres</label>
@@ -82,7 +82,7 @@ $clientes = $resultado->fetchAll(PDO::FETCH_ASSOC);
                 <?php
                 foreach ($clientes as $filtro) {
                 ?>
-                  <option><?php echo $filtro['idEmpleado'] ?> -- <?php echo $filtro['EmpNombre']?></option>
+                  <option><?php echo $filtro['idEmpleado'] ?> -- <?php echo $filtro['EmpNombre'] ?></option>
                 <?php
                 }
                 ?>
@@ -90,9 +90,10 @@ $clientes = $resultado->fetchAll(PDO::FETCH_ASSOC);
             </div>
 
             <div>
-              <button type="submit" name="btn_registrar" class="btn_link" >Registrar</button>
+              <button type="submit" name="btn_registrar" class="btn_link">Registrar</button>
             </div>
 
+            <?php include '../controlador/registrar.php' ?>
 
           </form>
         </div>
