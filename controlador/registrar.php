@@ -3,27 +3,28 @@
 include '../modelo/conex.php';
 
 
-if(isset($_POST['btn_registrar'])){
-  $idEmpleado = $_POST['idEmpleado'];
+if (isset($_POST['btn_registrar'])) {
+
   $CliNombre = $_POST['nombre'];
   $CliApellido = $_POST['apellido'];
   $CliIdentificacion = $_POST['documento'];
   $CliTelefono = $_POST['telefono'];
   $CliCorreo = $_POST['email'];
-  
-  
-	
-  if($idEmpleado ="" || $CliNombre =="" || $CliApellido =="" || $CliIdentificacion =="" || $CliTelefono =="" || $CliCorreo =="" ){
+  $idEmpleado = $_POST['idEmpleado'];
+
+
+
+  if ($CliNombre == "" || $CliApellido == "" || $CliIdentificacion == "" || $CliTelefono == "" || $CliCorreo == "" || $idEmpleado == "") {
+    
     echo "<script> Swal.fire('Todos los Campos son obligatorios')</script>";
-  }
-  else{
+
+  } else {
     $registrar = mysqli_query(
-      $conectar, 
-      "INSERT INTO clientes (idEmpleado, CliNombre, CliApellido, CliIdentificacion, CliTelefono, CliCorreo,) 
-      VALUES ('$idEmpleado','$CliNombre', '$CliApellido', '$CliIdentificacion', '$CliTelefono', '$CliCorreo')");
+      $conectar,
+      "INSERT INTO clientes (CliNombre, CliApellido, CliIdentificacion, CliTelefono, CliCorreo, idEmpleado) 
+      VALUES('$CliNombre', '$CliApellido', '$CliIdentificacion', '$CliTelefono', '$CliCorreo', '$idEmpleado')"
+    );
 
     echo "<script> Swal.fire('Registro Exitoso')</script>";
   }
-	
 }
-?>

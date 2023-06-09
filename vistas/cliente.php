@@ -1,13 +1,13 @@
 <?php
-  //Iniciamos la DB para consultar la tabla de clientes
-  include_once '../modelo/conectar_cliente.php';
-  $objeto = new Conexx();
-  $conex = $objeto->Conect();
+//Iniciamos la DB para consultar la tabla de clientes
+include_once '../modelo/conectar_cliente.php';
+$objeto = new Conexion();
+$conexion = $objeto->Conectar();
 
-  $consulta = "SELECT * FROM clientes";
-  $resultado = $conex->prepare($consulta);
-  $resultado->execute();
-  $clientes = $resultado->fetchAll(PDO::FETCH_ASSOC);
+$consulta = "SELECT * FROM empleados";
+$resultado = $conexion->prepare($consulta);
+$resultado->execute();
+$clientes = $resultado->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
@@ -27,7 +27,7 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 
 
-  <title>Supermercados Megaplus Clientes</title>
+  <title>Registro Clientes</title>
 </head>
 
 <body>
@@ -49,21 +49,7 @@
       <div class="container_container">
         <div class="container_login">
           <h2 class="login_title">Registro de Clientes</h2>
-          <form action="" method="post" class="form_login">
-            <div class="login-form">
-              <label>Cajero</label>
-              <select name="idEmpleado">
-                <option>---Seleccione---</option>
-                  <?php
-                    foreach($clientes as $filtro){
-                  ?>
-                  <option><?php echo $filtro['idEmpleado']?></option>
-                  <?php
-                  }
-                  ?>
-              </select><br><br>
-            </div>
-
+          <form action="../controlador/registrar.php" method="post" class="form_login">
             <div class="login-form">
               <input type="text" name="nombre" id="name"><span class="barra"></span>
               <label for="">Nombres</label>
@@ -89,11 +75,24 @@
               <label for="">Correo</label>
             </div>
 
-            <button id="boton" name="btn_registrar" type="submit" class="btn_link">Registrar</button>
+            <div class="login-form">
+              <label>Cajero</label>
+              <select name="idEmpleado">
+                <option>---Seleccione---</option>
+                <?php
+                foreach ($clientes as $filtro) {
+                ?>
+                  <option><?php echo $filtro['idEmpleado'] ?> -- <?php echo $filtro['EmpNombre']?></option>
+                <?php
+                }
+                ?>
+              </select><br><br>
+            </div>
 
-            <?php 
-              include '../controlador/registrar.php'
-            ?>
+            <div>
+              <button type="submit" name="btn_registrar" class="btn_link" >Registrar</button>
+            </div>
+
 
           </form>
         </div>
@@ -103,11 +102,12 @@
   <footer>
     <hr>
     <img class="logos" src="../Img/logo.png">
-    <p class="copy">&copy Supermercados Megaplus 2022 || Todos los derechos reservados ❤ <br> 
-    <span class="ela">Claudia Padilla // Joan Horta // Yecid Leyes</span></p>
+    <p class="copy">&copy Supermercados Megaplus 2022 || Todos los derechos reservados ❤ <br>
+      <span class="ela">Claudia Padilla // Joan Horta // Yecid Leyes</span>
+    </p>
   </footer>
 
-  
+
   <script src="../js/logout_clientes.js"></script>
 </body>
 

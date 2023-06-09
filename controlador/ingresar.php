@@ -1,7 +1,7 @@
 
 <?php
 
-include '../modelo/conex.php';
+
 
 if (isset($_POST['btn_Ingresar'])){
 
