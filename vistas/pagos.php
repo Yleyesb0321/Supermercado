@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="../Img/logo.png" type="image/x-icon"><!--? Agregamos la imagen de la pagina-->
+  <link href="../css/pagos.css" rel="stylesheet">
+
+  <!--Sweet Alert 2-->
+  <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
+
+  <title>Pagos</title>
+</head>
+
+<body>
+
+  <header>
+    <h1 class="logo"> SUPERMERCADOS <br> MEGAPLUS </h1>
+    <nav class="nav">
+      <div class="container_container">
+        <div class="container_texts">
+          <h2 class="container_subtitle">Pagos</h2>
+          <button class="btn_logout">Cerrar</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="container">
+      <div class="container_container">
+        <h2 class="pagos_container">Registro de Pagos<br><br></h2>
+
+
+        <div class="container_pagos">
+          <div class="form_login">
+            <div class="login-form">
+              <h2 class="pagos_subtitle">Tarjeta Debito</h2>
+              <button type="submit" name="btn_pagar" class="btn_link">Pagar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="container_pagos">
+          <div class="form_login">
+            <div class="login-form">
+              <h2 class="pagos_subtitle">Tarjeta Credito</h2>
+              <button type="submit" name="btn_pagar" class="btn_link">Pagar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="container_pagos">
+          <div class="form_login">
+            <div class="login-form">
+              <h2 class="pagos_subtitle">Efectivo</h2>
+              <button type="submit" name="btn_pagar" class="btn_link">Pagar</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+  <footer>
+    <hr>
+    <img class="logos" src="../Img/logo.png">
+    <p class="copy">&copy Supermercados Megaplus 2022 || Todos los derechos reservados ❤ <br>
+      <span class="ela">Claudia Padilla // Joan Horta // Yecid Leyes</span>
+    </p>
+  </footer>
+
+
+  <script src="../js/logout_pagos.js"></script>
+</body>
+
+</html>

@@ -62,11 +62,8 @@
 
             <p name="olvidar" class="forget"><a>¿Olvidastes tu Contraseña?</a></p>
 
-            <!--Controlador para el Ingreso-->
-            <?php
-            include 'controlador/ingresar.php';
-            ?>
-
+            <?php include 'controlador/ingresar.php'; ?>
+            
           </form>
         </div>
       </div>
