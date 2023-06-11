@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-06-2023 a las 02:51:55
+-- Tiempo de generación: 11-06-2023 a las 02:02:02
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.1.17
 
@@ -30,7 +30,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `auxiliares` (
   `idAuxiliar` int(11) NOT NULL,
   `idEmpleado` int(11) NOT NULL,
-  `AuxRol` varchar(30) DEFAULT NULL,
+  `EmpNombre` varchar(30) NOT NULL,
+  `EmpCargo` varchar(30) DEFAULT NULL,
   `AuxTurno` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -54,10 +55,18 @@ CREATE TABLE `cajas` (
 CREATE TABLE `cajeros` (
   `idCajero` int(11) NOT NULL,
   `idEmpleado` int(11) NOT NULL,
-  `cajRol` varchar(30) NOT NULL,
+  `EmpNombre` varchar(30) NOT NULL,
+  `EmpCargo` varchar(30) NOT NULL,
   `cajNumero_Caja` int(11) NOT NULL,
   `cajTurno` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `cajeros`
+--
+
+INSERT INTO `cajeros` (`idCajero`, `idEmpleado`, `EmpNombre`, `EmpCargo`, `cajNumero_Caja`, `cajTurno`) VALUES
+(8675, 67453, '', 'Cajero', 2, 'Mañana');
 
 -- --------------------------------------------------------
 
@@ -67,13 +76,21 @@ CREATE TABLE `cajeros` (
 
 CREATE TABLE `clientes` (
   `idCliente` int(11) NOT NULL,
-  `idCajero` int(11) NOT NULL,
   `CliNombre` text NOT NULL,
   `CliApellido` text NOT NULL,
   `CliIdentificacion` varchar(15) NOT NULL,
-  `CliTelefono` varchar(30) NOT NULL,
-  `CliCorreo` varchar(30) NOT NULL
+  `CliTelefono` varchar(15) NOT NULL,
+  `CliCorreo` varchar(30) NOT NULL,
+  `idEmpleado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `clientes`
+--
+
+INSERT INTO `clientes` (`idCliente`, `CliNombre`, `CliApellido`, `CliIdentificacion`, `CliTelefono`, `CliCorreo`, `idEmpleado`) VALUES
+(2, 'Andres', 'Marin', '1052345678', '3503456789', 'amarin@cliente.com', 67453),
+(4, 'Felipe', 'Gonzalez', '123456789', '3205566778', 'felipeg@caco.com', 67453);
 
 -- --------------------------------------------------------
 
@@ -200,7 +217,8 @@ CREATE TABLE `inventarios` (
 CREATE TABLE `jefes_dptos` (
   `idJefe_Dpto` int(11) NOT NULL,
   `idEmpleado` int(11) NOT NULL,
-  `JefRol` varchar(15) NOT NULL,
+  `EmpNombre` varchar(30) NOT NULL,
+  `EmpCargo` varchar(15) NOT NULL,
   `JefTurno` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -330,7 +348,7 @@ ALTER TABLE `cajeros`
 --
 ALTER TABLE `clientes`
   ADD PRIMARY KEY (`idCliente`),
-  ADD KEY `idCajero` (`idCajero`);
+  ADD KEY `idEmpleado` (`idEmpleado`);
 
 --
 -- Indices de la tabla `compras`
@@ -439,13 +457,13 @@ ALTER TABLE `cajas`
 -- AUTO_INCREMENT de la tabla `cajeros`
 --
 ALTER TABLE `cajeros`
-  MODIFY `idCajero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8675;
+  MODIFY `idCajero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8676;
 
 --
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `idCliente` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idCliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `compras`
@@ -539,7 +557,7 @@ ALTER TABLE `cajeros`
 -- Filtros para la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  ADD CONSTRAINT `clientes_ibfk_1` FOREIGN KEY (`idCajero`) REFERENCES `cajeros` (`idCajero`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `clientes_ibfk_1` FOREIGN KEY (`idEmpleado`) REFERENCES `empleados` (`idEmpleado`);
 
 --
 -- Filtros para la tabla `compras`
