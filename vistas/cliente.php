@@ -33,7 +33,8 @@ $clientes = $resultado->fetchAll(PDO::FETCH_ASSOC);
 <body>
 
   <header>
-    <h1 class="logo"> SUPERMERCADOS <br> MEGAPLUS </h1>
+    <img src="../Img/logo.png" alt="logo" class="logo_img">
+    <h1 class="logo"> SUPERMERCADOS MEGAPLUS </h1>
     <nav class="nav">
       <div class="container_container">
         <div class="container_texts">

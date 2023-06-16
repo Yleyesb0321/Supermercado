@@ -14,17 +14,14 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 
 
-  <title>Supermercados Megaplus</title>
+  <title>Ventas</title>
 </head>
 
 <body>
-  
-  <div class="contenedor_loader">
-    <div class="loader"></div>
-  </div>
 
   <header>
-    <h1 class="logo"> SUPERMERCADOS <br> MEGAPLUS </h1>
+    <img src="../Img/logo.png" alt="logo" class="logo_img">
+    <h1 class="logo"> SUPERMERCADOS MEGAPLUS </h1>
     <nav class="nav">
       <a href="cliente.php">Clientes</a>
       <a href="factura.php">Factura</a>
@@ -34,6 +31,10 @@
       <button class="btn_logout">Cerrar Sesión</button>
     </nav>
   </header>
+
+  <div class="container_texts">
+    <p class="container_paragraph">Selecciona la opción deseada.</p>
+  </div>
 
   <footer>
     <hr>

@@ -20,7 +20,7 @@
 <body>
 
   <header>
-    <h1 class="logo"> SUPERMERCADOS <br> MEGAPLUS </h1>
+    <h1 class="logo"> SUPERMERCADOS MEGAPLUS </h1>
     <nav class="nav">
       <div class="container_container">
         <div class="container_texts">

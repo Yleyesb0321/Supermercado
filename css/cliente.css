@@ -62,6 +62,10 @@ header{
   z-index: 99;
   background: #2d3436;
 }
+.logo_img{/*Maneja la imagen del logo*/
+  width: 50px;
+  margin: 20px 0px;
+}
 
 h1{
   top: 80px;

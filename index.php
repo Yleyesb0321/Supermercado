@@ -19,11 +19,7 @@
 </head>
 
 <body>
-  <!--Carga el load de la pagina
-  <div class="contenedor_loader">
-    <div class="loader"></div>
-  </div> 
-  -->
+
   <header>
     <img src="./Img/logo.png" alt="logo" class="logo_img">
     <h1 class="logo"> SUPERMERCADOS MEGAPLUS </h1>
