@@ -110,7 +110,7 @@ $clientes = $resultado->fetchAll(PDO::FETCH_ASSOC);
   </footer>
 
 
-  <script src="../js/logout_clientes.js"></script>
+  <script src="../js/cerrar.js"></script>
 </body>
 
 </html>

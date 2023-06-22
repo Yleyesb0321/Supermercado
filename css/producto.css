@@ -129,48 +129,44 @@ h1{
 .container_container{/*Maneja el contenedor del div*/
   background-color: rgba(49, 42, 42, 0.2);
   text-align: center;
-
 }
 .container_texts{
   display: flex;
   color: #f7f2f2;
+  justify-content: space-between;
   margin-right: 1rem;
 }
-
 .container_subtitle{/*Maneja el subtitulo h2*/
   font-size: 2rem;
   font-weight: bold;
 }
-.pagos_container{/* Maneja el subtitulo de Registro de Pagos*/
+.container_producto{/* Maneja el subtitulo de Registro de Pagos*/
   font-size: 3rem;
   font-weight: bold;
   color: #f7f2f2;
   margin-top: 50px;
 }
 
-.container_pagos{/*Maneja el div del pagos*/
+.container_productos{/*Maneja el div de los productos*/
   position: relative;
-  height: 12rem;
-  width: 30rem;
+  width: 70%;
   background:transparent;
   border: 2px solid rgba(255, 255, 255, .5);
   border-radius: 20px;
   backdrop-filter: blur(5px);
   box-shadow: 7px 13px 37px rgba(0, 0, 0, .5);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin: 20px .5rem;
+  display: block;
+  margin-left: 14rem; 
   border-bottom: 5px solid white;
-  transform: scale(1);
-  overflow:hidden;
-  transition: transform .5s ease;
+  color: #f7f2f2;
 }
 
-.pagos_subtitle{/*Maneja el titulo del login*/
-  font-size: 2rem;
-  font-weight: bold;
-  color: #f7f2f2;
+.login_title{/*Maneja el titulo del login*/
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 25px;
+  text-align: center;
 }
 
 .form_login{/*Maneja el contenedor de la form*/
@@ -182,13 +178,37 @@ h1{
   position:relative;
   margin: 45px;
 }
+input{/*Maneja el cuadro de texto del input*/
+  background: none;
+  color: #c6c6c6;
+  font-size: 18px;
+  padding: 10px 5px;
+  display: block;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid white;
+}
+input:focus{/*Maneja el efecto del input*/
+  outline: none;
+  color: white;
+}
+label{/*Maneja los nombres de los input*/
+  color: white;
+  position: absolute;
+  font-size: 25px;
+  left: 5px;
+  top: 1px;
+  transition: 0.5s ease-in-out all;
+  pointer-events: none;
+}
 
 .btn_link{/*Maneja el boton*/
   background: #162938;
   border: none;
   display: block;
-  width: 80%;
-  margin: 10px auto;
+  width: 150%;
+  margin: 10px;
   color: white;
   height: 40px;
   cursor: pointer;

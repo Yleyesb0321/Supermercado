@@ -19,7 +19,8 @@
 
 <body>
 
-  <header>
+<header>
+    <img src="../Img/logo.png" alt="logo" class="logo_img">
     <h1 class="logo"> SUPERMERCADOS MEGAPLUS </h1>
     <nav class="nav">
       <div class="container_container">
@@ -76,7 +77,7 @@
   </footer>
 
 
-  <script src="../js/logout_pagos.js"></script>
+  <script src="../js/cerrar.js"></script>
 </body>
 
 </html>
