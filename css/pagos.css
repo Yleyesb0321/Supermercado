@@ -183,7 +183,7 @@ h1{
   margin: 45px;
 }
 
-.btn_link{/*Maneja el boton*/
+.btn_pagar{/*Maneja el boton*/
   background: #162938;
   border: none;
   display: block;
@@ -198,7 +198,7 @@ h1{
   font-size: 20px;
 
 }
-.btn_link:hover{/*Maneja el efecto del boton*/
+.btn_pagar:hover{/*Maneja el efecto del boton*/
   background:transparent;
   border: 4px solid #162938;
 }

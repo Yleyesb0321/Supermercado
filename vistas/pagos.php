@@ -19,7 +19,7 @@
 
 <body>
 
-<header>
+  <header>
     <img src="../Img/logo.png" alt="logo" class="logo_img">
     <h1 class="logo"> SUPERMERCADOS MEGAPLUS </h1>
     <nav class="nav">
@@ -42,7 +42,7 @@
           <div class="form_login">
             <div class="login-form">
               <h2 class="pagos_subtitle">Tarjeta Debito</h2>
-              <button type="submit" name="btn_pagar" class="btn_link">Pagar</button>
+              <button type="submit" name="btn_pago" class="btn_pagar" onclick="pagos()">Pagar</button>
             </div>
           </div>
         </div>
@@ -51,7 +51,7 @@
           <div class="form_login">
             <div class="login-form">
               <h2 class="pagos_subtitle">Tarjeta Credito</h2>
-              <button type="submit" name="btn_pagar" class="btn_link">Pagar</button>
+              <button type="submit" name="btn_pago" class="btn_pagar" onclick="pagos()">Pagar</button>
             </div>
           </div>
         </div>
@@ -60,7 +60,7 @@
           <div class="form_login">
             <div class="login-form">
               <h2 class="pagos_subtitle">Efectivo</h2>
-              <button type="submit" name="btn_pagar" class="btn_link">Pagar</button>
+              <button type="submit" name="btn_pago" class="btn_pagar" onclick="pagos()">Pagar</button>
             </div>
           </div>
         </div>
@@ -76,8 +76,9 @@
     </p>
   </footer>
 
-
+  <script src="../js/pagar.js"></script>
   <script src="../js/cerrar.js"></script>
+
 </body>
 
 </html>

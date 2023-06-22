@@ -1,12 +1,13 @@
 
 //Realiza la Carga del Loader
+/*
 window.addEventListener('load', (e)=>{
   e.preventDefault()
   const contenedor_loader = document.querySelector('.contenedor_loader');
   contenedor_loader.style.opacity = 0;
   contenedor_loader.style.visibility = 'hidden'
 })
-
+*/
 
 const login = document.querySelector('.container_login');//Llama al container del login
 const btnLogin = document.querySelector('.btn_login');//Llama el boton de inicar sesion
