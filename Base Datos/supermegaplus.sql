@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-06-2023 a las 02:02:02
+-- Tiempo de generación: 23-06-2023 a las 05:44:54
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.1.17
 
@@ -46,6 +46,16 @@ CREATE TABLE `cajas` (
   `CajNumero` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `cajas`
+--
+
+INSERT INTO `cajas` (`idCaja`, `CajNumero`) VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4);
+
 -- --------------------------------------------------------
 
 --
@@ -66,7 +76,8 @@ CREATE TABLE `cajeros` (
 --
 
 INSERT INTO `cajeros` (`idCajero`, `idEmpleado`, `EmpNombre`, `EmpCargo`, `cajNumero_Caja`, `cajTurno`) VALUES
-(8675, 67453, '', 'Cajero', 2, 'Mañana');
+(8675, 67453, '', 'Cajero', 2, 'Mañana'),
+(225671, 45678, '', 'Cajero', 1, 'Tarde');
 
 -- --------------------------------------------------------
 
@@ -107,6 +118,13 @@ CREATE TABLE `compras` (
   `ComCantidad` int(11) NOT NULL,
   `ComTotal` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `compras`
+--
+
+INSERT INTO `compras` (`idCompra`, `idCliente`, `ComFecha`, `ComHora`, `ComPrecio`, `ComCantidad`, `ComTotal`) VALUES
+(1, 2, '2023-06-20', '19:30:09', 12400, 2, 24800);
 
 -- --------------------------------------------------------
 
@@ -208,6 +226,14 @@ CREATE TABLE `inventarios` (
   `InvTotal_Producto` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `inventarios`
+--
+
+INSERT INTO `inventarios` (`idInventario`, `InvCodigo_Producto`, `InvNombre_Producto`, `InvTipo_Producto`, `InvCantidad`, `InvPrecio`, `InvNombre_Proveedor`, `InvTotal_Producto`) VALUES
+(1, 1, 'Chocolisto', 'Tarro 1000gr', 20, 20000, 'Ruben Garces', 400000),
+(2, 2, 'Chocolisto', 'Bolsa 450gr', 25, 10300, 'Ruben Garces', 257500);
+
 -- --------------------------------------------------------
 
 --
@@ -258,6 +284,13 @@ CREATE TABLE `productos` (
   `ProPrecio_Producto` int(11) NOT NULL,
   `ProLote_Producto` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `productos`
+--
+
+INSERT INTO `productos` (`idProducto`, `idInventario`, `idCompra`, `ProCodigo`, `ProNombre_Producto`, `ProDescripcion_Producto`, `ProCantidad_Producto`, `ProPrecio_Producto`, `ProLote_Producto`) VALUES
+(1, 2, 1, 1, 'Chocolisto', 'Tarro 1000gr', 20, 20000, '16203013');
 
 -- --------------------------------------------------------
 
@@ -310,8 +343,8 @@ INSERT INTO `usuarios_pass` (`Id_UsuariosPass`, `idEmpleado`, `Usuarios`, `Clave
 CREATE TABLE `ventas` (
   `idVenta` int(11) NOT NULL,
   `idCajero` int(11) NOT NULL,
-  `VenProducto` varchar(30) DEFAULT NULL,
   `VenNombre_Cajero` varchar(30) DEFAULT NULL,
+  `VenProducto` varchar(30) DEFAULT NULL,
   `VenFecha` date NOT NULL,
   `VenHora` time NOT NULL,
   `VenPrecio` int(11) NOT NULL,
@@ -334,14 +367,17 @@ ALTER TABLE `auxiliares`
 -- Indices de la tabla `cajas`
 --
 ALTER TABLE `cajas`
-  ADD PRIMARY KEY (`idCaja`);
+  ADD PRIMARY KEY (`idCaja`),
+  ADD KEY `CajNumero` (`CajNumero`);
 
 --
 -- Indices de la tabla `cajeros`
 --
 ALTER TABLE `cajeros`
   ADD PRIMARY KEY (`idCajero`),
-  ADD KEY `idEmpleado` (`idEmpleado`);
+  ADD KEY `idEmpleado` (`idEmpleado`),
+  ADD KEY `cajNumero_Caja` (`cajNumero_Caja`),
+  ADD KEY `EmpNombre` (`EmpNombre`);
 
 --
 -- Indices de la tabla `clientes`
@@ -378,7 +414,8 @@ ALTER TABLE `devoluciones`
 --
 ALTER TABLE `empleados`
   ADD PRIMARY KEY (`idEmpleado`),
-  ADD UNIQUE KEY `EmpIdentificacion` (`EmpIdentificacion`);
+  ADD UNIQUE KEY `EmpIdentificacion` (`EmpIdentificacion`),
+  ADD KEY `EmpNombre` (`EmpNombre`);
 
 --
 -- Indices de la tabla `facturas`
@@ -451,13 +488,13 @@ ALTER TABLE `auxiliares`
 -- AUTO_INCREMENT de la tabla `cajas`
 --
 ALTER TABLE `cajas`
-  MODIFY `idCaja` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idCaja` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `cajeros`
 --
 ALTER TABLE `cajeros`
-  MODIFY `idCajero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8676;
+  MODIFY `idCajero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=225672;
 
 --
 -- AUTO_INCREMENT de la tabla `clientes`
@@ -469,7 +506,7 @@ ALTER TABLE `clientes`
 -- AUTO_INCREMENT de la tabla `compras`
 --
 ALTER TABLE `compras`
-  MODIFY `idCompra` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idCompra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `detalles_compras`
@@ -499,7 +536,7 @@ ALTER TABLE `facturas`
 -- AUTO_INCREMENT de la tabla `inventarios`
 --
 ALTER TABLE `inventarios`
-  MODIFY `idInventario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idInventario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `jefes_dptos`
@@ -551,7 +588,8 @@ ALTER TABLE `auxiliares`
 -- Filtros para la tabla `cajeros`
 --
 ALTER TABLE `cajeros`
-  ADD CONSTRAINT `cajeros_ibfk_1` FOREIGN KEY (`idEmpleado`) REFERENCES `empleados` (`idEmpleado`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `cajeros_ibfk_1` FOREIGN KEY (`idEmpleado`) REFERENCES `empleados` (`idEmpleado`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `cajeros_ibfk_2` FOREIGN KEY (`cajNumero_Caja`) REFERENCES `cajas` (`CajNumero`);
 
 --
 -- Filtros para la tabla `clientes`
