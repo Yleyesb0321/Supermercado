@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Oswald', sans-serif;
+}
+
+
+/*^ Contenido */
+
+.modal{/*Maneja el contenedor del div*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  
+}
+.modal--show{
+  opacity: 1;
+  pointer-events: unset;
+}
+.modal_body{
+  text-align: center;
+  position: relative;
+  height: 50rem;
+  width: 30rem;
+  background:transparent;
+  border: 2px solid rgba(255, 255, 255, .7);
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  box-shadow: 7px 13px 37px rgba(0, 0, 0, .7);
+  display: block;
+  align-items: center;
+  justify-content: center;
+  /*margin:80px 30rem;*/
+  border-bottom: 5px solid white;
+  margin: auto;
+}
+
+.modal_title{/*Maneja el titulo del login*/
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.form_login{/*Maneja el contenedor de la form*/
+  width: 100%;
+  margin: auto;
+}
+.padre{
+  display: inline-grid;
+  grid-template-columns: auto auto;
+  background-color: #2196F3;
+}
+.cuadro{
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  font-size: 10px;
+  text-align: center;
+}
+
+.login-form{/*Maneja el div del input*/
+  position:relative;
+  margin: 45px;
+}
+label{/*Maneja los nombres de los input*/
+  
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0px;
+  font-size: 20px;
+  transition: 0.5s;
+  color: white;
+  pointer-events: none;
+}
+
+input{/*Maneja el cuadro de texto del input*/
+  background: none;
+  color: #c6c6c6;
+  font-size: 16px;
+  padding: 10px 5px;
+  display: block;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid white;
+}
+
+input:focus~label,
+input:valid~label{/*Maneja el efecto de los input y label*/
+  top: -10px;
+  font-size: 14px;
+  color: #f9fcfc;
+  outline: none;
+}
+.selec{
+  background: none;
+  color: #f9fcfc;
+  font-size: 16px;
+  outline: none;
+  border-radius: 10px;
+
+}
+.opt{
+  background: rgba(0, 0, 0, .9);
+}
+
+.barra{/*Maneja la linea de input*/
+  display: block;
+  position: relative;
+  width: 100%;
+}
+.barra::before{/*Maneja el efecto de la linea del input*/
+  content: "";
+  height: 2px;
+  width: 0%;
+  bottom: 0;
+  position: absolute;
+  background: linear-gradient(to right, #162938, #3e9fb9 );
+  transition: 0.3s ease width;
+  left: 0;
+}
+input:focus~.barra::before{/*Maneja efectos de las lineas*/
+  width: 105%;
+}
+
+.btn_cancelar{/*Maneja el boton cancelar*/
+  background: #DC143C;
+  border: none;
+  display: block;
+  width: 80%;
+  margin: 10px auto;
+  color: white;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.6s ease-in-out;
+  text-decoration: none;
+  font-size: 20px;
+
+}
+.btn_cancelar:hover{/*Maneja el efecto del boton cancelar*/
+  background:transparent;
+  border: 4px solid #DC143C;
+}
+.btn_guardar{/*Maneja el boton registrar del formulario*/
+  background: #20B2AA;
+  border: none;
+  display: block;
+  width: 80%;
+  margin: 10px auto;
+  color: white;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.4s ease-in-out;
+  text-decoration: none;
+  font-size: 20px;
+
+}
+.btn_guardar:hover{/*Maneja el efecto del boton registrar del formulario*/
+  background:transparent;
+  border: 4px solid #20B2AA;
+}
+
+a{
+  text-decoration: none;
+}
+
+/*^ Fin Contenido */
+
+/*^ Pie de Pagina */
+footer{/*Maneja todo el contenedor*/
+  align-items: center;
+  text-align: center;
+  margin-top: 370px;
+  background: #2d3436;
+}
+hr{/*Maneja la linea separadora*/
+  border: 2px solid white;
+  margin-top: 70px;
+}
+.logos{/*Maneja la imagen del footer*/
+  width: 5rem;
+  margin: 50px auto 10px auto;
+}
+.copy{/*Maneja el texto de copyright*/
+  margin: 20px;
+  font-size: 30px;
+  color: white;
+}
+.ela{
+  margin-top:40px;
+  font-size: 25px;
+  font-weight: 300;
+}
+
+/*^ Fin Pie de Pagina */

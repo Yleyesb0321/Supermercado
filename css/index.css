@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Oswald', sans-serif;
+}
+
+/*^ Loader de Carga*/
+.contenedor_loader{/*Maneja el contenedor del loading*/
+  background: transparent;
+  backdrop-filter: blur(150px);
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  transition: all 8s;
+}
+
+.loader{
+  border: 15px solid #162938;
+  border-top-color: #07f8d0;
+  border-top-style: groove;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+
+  /*Para centralo en la pantalla*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  animation: load .5s linear infinite;
+}
+@keyframes load {/*Maneja la animacion*/
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+/*^ Fin Loader de Carga*/
+
+body{
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 100%;
+  background: linear-gradient(0deg, rgba(0,0,0,.8), rgba(0,0,0,.8)), url('../Img/super5.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+/*/
+/*^ Encabezado */
+header{/*Maneja el encabezado*/
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+  background: #2d3436;
+}
+.logo_img{/*Maneja la imagen del logo*/
+  width: 150px;
+  margin: 20px auto;
+}
+
+h1{/*Maneja el titulo*/
+  top: 80px;
+  font-size: 3em;
+  font-family: Oswald;
+  color: white;
+  text-align: center;
+  user-select: none;
+  margin-right: auto;
+}
+
+.btn_login{/*Maneja el boton de iniciar sesion*/
+  width: 170px;
+  height: 50px;
+  background: transparent;
+  border: 2px solid #fff;
+  outline: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 1.3em;
+  color: #fff;
+  font-weight: 500;
+  margin-left: 20rem;
+  transition: .5s;
+}
+.btn_login:hover{/*Maneja efecto del boton de inicio sesion*/
+  color: #fff;
+  background: #162938;
+}
+
+/*^ Contenido */
+.container_texts{
+  color: #f7f2f2;
+}
+.container_container{/*Maneja el contenedor del div*/
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5em;
+  align-items: center;
+  margin-top: 10px;
+  padding-bottom: 70px;
+  background-color: rgba(49, 42, 42, 0.2);
+  text-align: center;
+}
+
+.container_subtitle{/*Maneja el subtitulo h2*/
+  font-size: 6rem;
+  font-weight: bold;
+  margin-left: 300px;
+}
+.container_paragraph{/*Maneja el texto*/
+  font-size: 2.3rem;
+  line-height: 1.7;
+  margin-left: 500px;
+  margin-bottom: 15px;
+  font-weight: 400;
+}
+.container_login{/*Maneja el div del login*/
+  position: relative;
+  height: 470px;
+  width: 350px;
+  background:transparent;
+  border: 2px solid rgba(255, 255, 255, .5);
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  box-shadow: 7px 13px 37px rgba(0, 0, 0, .5);
+  display: block;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 100px auto;
+  border-bottom: 5px solid white;
+  transform: scale(0);
+  overflow: hidden;
+  transition: transform .5s ease;
+}
+.active-popup{
+  transform: scale(1);
+}
+
+.login_title{/*Maneja el titulo del login*/
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.form_login{/*Maneja el contenedor de la form*/
+  width: 100%;
+  margin: auto;
+}
+
+.login-form{/*Maneja el div del input*/
+  position:relative;
+  margin: 45px;
+}
+.login-form label{/*Maneja los nombres de los input*/
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0px;
+  font-size: 20px;
+  transition: 0.5s;
+  color: white;
+  pointer-events: none;
+}
+.login-form input{/*Maneja el cuadro de texto del input*/
+  background: none;
+  color: #c6c6c6;
+  font-size: 16px;
+  padding: 10px 5px;
+  display: block;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid white;
+}
+
+.login-form input:focus~label,
+.login-form input:valid~label{/*Maneja el efecto de los input y label*/
+  top: -10px;
+  font-size: 16px;
+  color: #f9fcfc;
+  outline: none;
+}
+.selec{
+  background: none;
+  color: #f9fcfc;
+  font-size: 16px;
+  outline: none;
+  border-radius: 10px;
+
+}
+.opt{
+  background: rgba(0, 0, 0, .9);
+}
+
+.barra{/*Maneja la linea de input*/
+  display: block;
+  position: relative;
+  width: 100%;
+}
+.barra::before{/*Maneja el efecto de la linea del input*/
+  content: "";
+  height: 2px;
+  width: 0%;
+  bottom: 0;
+  position: absolute;
+  background: linear-gradient(to right, #162938, #3e9fb9 );
+  transition: 0.3s ease width;
+  left: 0;
+}
+.login-form input:focus~.barra::before{/*Maneja efectos de las lineas*/
+  width: 105%;
+}
+
+.btn_link{/*Maneja el boton de Ingresar*/
+  background: #162938;
+  border: none;
+  display: block;
+  width: 80%;
+  margin: 10px auto;
+  color: white;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.6s ease-in-out;
+  text-decoration: none;
+  font-size: 20px;
+
+}
+.btn_link:hover{/*Maneja el efecto del boton*/
+  background:transparent;
+  border: 4px solid #162938;
+}
+
+.forget a{/*Maneja el texto de olvido contraseña*/
+  font-size: 16px;
+  text-align: center;
+  margin: 15px;
+  color: white;
+  text-decoration: none;
+}
+
+.forget a:hover{/*Maneja el efecto del link*/
+  text-decoration: underline;
+  color: #0be4d9;
+  cursor: pointer;
+}
+
+
+.error-container{/*Maneja la pagina de Error */
+  text-align: center;
+  color: white;
+  margin: 20rem;
+}
+.title{/*Maneja el titulo del Error */
+  font-size: 80px;
+}
+.subtitle{/*Maneja el subtitulo del Error */
+  font-size: 40px;
+}
+/*^ Fin Contenido */
+
+
+/*^ Pie de Pagina */
+footer{/*Maneja todo el contenedor*/
+  align-items: center;
+  text-align: center;
+  margin-top: 370px;
+  background: #2d3436;
+}
+hr{/*Maneja la linea separadora*/
+  border: 2px solid white;
+  margin-top: 70px;
+}
+.logos{/*Maneja la imagen del footer*/
+  width: 5rem;
+  margin: 50px auto 10px auto;
+}
+.copy{/*Maneja el texto de copyright*/
+  margin: 20px;
+  font-size: 30px;
+  color: white;
+}
+.ela{
+  margin-top:40px;
+  font-size: 25px;
+  font-weight: 300;
+}
+
+/*^ Fin Pie de Pagina */

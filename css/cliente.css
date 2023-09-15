@@ -7,38 +7,6 @@
   font-family: 'Oswald', sans-serif;
 }
 
-/*^ Loader de Carga*/
-.contenedor_loader{/*Maneja el contenedor del loading*/
-  background: transparent;
-  backdrop-filter: blur(150px);
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-  transition: all 8s;
-}
-
-.loader{
-  border: 15px solid #162938;
-  border-top-color: #07f8d0;
-  border-top-style: groove;
-  width: 100px;
-  height: 100px;
-  border-radius: 100%;
-
-  /*Para centralo en la pantalla*/
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  animation: load .5s linear infinite;
-}
-@keyframes load {/*Maneja la animacion*/
-  from {transform: rotate(0deg);}
-  to {transform: rotate(360deg);}
-}
-/*^ Fin Loader de Carga*/
 
 body{
   justify-content: center;
@@ -75,76 +43,94 @@ h1{
   text-align: center;
   user-select: none;
 }
+.user{
+  /*color: #f1c70b;*/
+  color: #20B2AA;
+}
 
 /*^ Fin Encabezado */
 
 /*^ Nav */
-.nav a{
-  position: relative;
-  color:  #f5faf9; 
-  font-weight: bold;
-  font-size: 1.7em;
-  text-decoration: none;
-  margin-left: 40px;
-}
-.nav a::after{/*Maneja la barra debajo de los links*/
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 100%;
-  height: 3px;
-  background: #fff;
-  border-radius: 5px;
-  transform-origin: right;
-  transform: scaleX(0);
-  transition: transform .5s;
-}
-.nav a:hover::after{/*Maneja el efcto de las barras debajo de los links*/
-  transform-origin: left;
-  transform: scaleX(1);
-}
-.nav .btn_logout{/*Maneja el boton de cerrar sesion*/
-  width: 150px;
-  height: 50px;
-  background: transparent;
-  border: 2px solid #fff;
-  outline: none;
-  border-radius: 15px;
-  cursor: pointer;
-  font-size: 1.3em;
-  color: #fff;
-  font-weight: 500;
-  margin-left: 40px;
-  transition: .5s;
-}
-.nav .btn_logout:hover{
-  background: #fff;
-  color: #162938;
-}
-/*^ Fin Nav */
 
-/*^ Contenido */
-
-.container_container{/*Maneja el contenedor del div*/
-  background-color: rgba(49, 42, 42, 0.2);
-  text-align: center;
-}
-.container_texts{
+.container_texts{/*Maneja el div del titulo Clientes*/
   display: flex;
   color: #f7f2f2;
   justify-content: space-between;
   margin-right: 1rem;
 }
-.container_subtitle{/*Maneja el subtitulo h2*/
+.container_subtitle{/*Maneja el subtitulo h2, Clientes*/
   font-size: 2rem;
   font-weight: bold;
 }
 
-.container_login{/*Maneja el div del login*/
+.nav .btn_logout{/*Maneja el boton de cerrar sesion*/
+  background: #d63031;
+  border: none;
+  width: 95px;
+  margin: 10px;
+  color: white;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  
+}
+.nav .btn_logout:hover{
+  background: transparent;
+  border: 3px solid #d63031;
+}
+
+/*^ Fin Nav */
+
+/*^ Contenido */
+
+.container_container{/*Maneja el contenedor del div*/
+  /*background-color: rgba(49, 42, 42, 0.2);*/
+  text-align: center;
+}
+.cliente_conta{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cliente_conta a{
+  text-decoration: none;
+}
+
+.cliente_title{/* Maneja el titulo del Listado de Clientes*/
+  font-size: 3rem;
+  font-weight: bold;
+  color: #f7f2f2;
+  margin-top: 50px;
+  text-align: center;
+  margin-right: 50px;
+}
+.btn_registrar{/*Maneja el boton de Registrar*/
+  background: #162938;
+  border: none;
+  width: 150px;
+  margin: 70px 10px 10px 10px;
+  color: white;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+}
+.btn_registrar:hover{/*Maneja el efecto del boton*/
+  background:transparent;
+  border: 3px solid #162938;
+}
+.container_lista{/*Maneja el div de la lista*/
   position: relative;
   height: 45rem;
-  width: 30rem;
+  width: 70rem;
   background:transparent;
   border: 2px solid rgba(255, 255, 255, .5);
   border-radius: 20px;
@@ -153,34 +139,145 @@ h1{
   display: block;
   align-items: center;
   justify-content: center;
-  margin: 20px 30rem;
+  margin:80px 13rem;
   border-bottom: 5px solid white;
   transform: scale(1);
   overflow:hidden;
-  transition: transform .5s ease;
+}
+.table{
+  text-align: center;
+  align-items: center;
+  margin: 30px auto;
+  
+}
+.table_head{
+  width: 100%;
+  font-size: 1.5em;
+  font-weight:300;
+  color: #f7f2f2; 
+
+}
+.table_head th{
+  padding: 30px;
+}
+.lista{
+  color: #20B2AA;
 }
 
-.login_title{/*Maneja el titulo del login*/
-  font-size: 1.5rem;
-  font-weight: 700;
+.btn_editar{/*Maneja el boton editar*/
+  background: #008080;
+  border: none;
+  display: block;
+  width: 80%;
+  margin: 10px auto;
   color: white;
-  margin-bottom: 25px;
+  height: 35px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  font-size: 20px;
+
+}
+.btn_editar:hover{/*Maneja el efecto del boton editar*/
+  background:transparent;
+  border: 3px solid #008080;
+}
+
+.btn_borrar{/*Maneja el boton eliminar*/
+  background: #DC143C;
+  border: none;
+  display: block;
+  width: 70%;
+  margin: 10px auto;
+  color: white;
+  height: 35px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  font-size: 20px;
+
+}
+.btn_borrar:hover{/*Maneja el efecto del boton eliminar*/
+  background:transparent;
+  border: 3px solid #DC143C;
+}
+/*^ Fin Contenido */
+
+/*! ******SECCION MODALES******/
+/*? MODAL REGISTRAR */
+.modalRegistrar{/*Maneja el contenedor del div*/
+  position:absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .6s .3s;/*Le da el efecto de aparecer al modal*/
+  --transform: translateY(-170vh) ;
+  --transition: transform .6s;
+  
+}
+.modal--showRegistrar{/*Activa el modal cuando oprimimos el boton*/
+  opacity: 1;
+  pointer-events: unset;
+  transition: opacity .6s;
+  --transform: translateY(0) ;
+  --transition: transform .6s .3s;
+}
+.modal_body{
+  text-align: center;
+  position: relative;
+  height: 50rem;
+  width: 30rem;
+  background:rgba(0, 0, 0, .4);
+  border: 2px solid rgba(255, 255, 255, .7);
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  box-shadow: 7px 13px 37px rgba(0, 0, 0, .7);
+  display: block;
+  align-items: center;
+  justify-content: center;
+  margin: 20rem 30rem;
+  border-bottom: 5px solid white;
+  transform: var(--transform);
+  transition: var(--transition);
+
+}
+.modal_title{/*Maneja el titulo del login*/
+  font-size: 2rem;
+  font-weight: 700;
+  color: #20B2AA;
+  margin: 25px 0px;
   text-align: center;
 }
-
 .form_login{/*Maneja el contenedor de la form*/
   width: 100%;
   margin: auto;
 }
-
 .login-form{/*Maneja el div del input*/
   position:relative;
   margin: 45px;
 }
+label{/*Maneja los nombres de los input*/
+  
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0px;
+  font-size: 20px;
+  transition: 0.5s;
+  color: white;
+  pointer-events: none;
+}
+
 input{/*Maneja el cuadro de texto del input*/
   background: none;
   color: #c6c6c6;
-  font-size: 18px;
+  font-size: 16px;
   padding: 10px 5px;
   display: block;
   width: 100%;
@@ -188,24 +285,26 @@ input{/*Maneja el cuadro de texto del input*/
   border: none;
   border-bottom: 1px solid white;
 }
-input:focus{/*Maneja el efecto del input*/
-  outline: none;
-  color: white;
-}
-label{/*Maneja los nombres de los input*/
-  color: white;
-  position: absolute;
-  font-size: 16px;
-  left: 5px;
-  top: 10px;
-  transition: 0.5s ease-in-out all;
-  pointer-events: none;
-}
-input:focus~label, input:valid~label{/*Maneja el efecto de los input y label*/
-  top: -14px;
-  font-size: 12px;
+
+input:focus~label,
+input:valid~label{/*Maneja el efecto de los input y label*/
+  top: -10px;
+  font-size: 14px;
   color: #f9fcfc;
+  outline: none;
 }
+.selec{
+  background: none;
+  color: #f9fcfc;
+  font-size: 16px;
+  outline: none;
+  border-radius: 10px;
+
+}
+.opt{
+  background: rgba(0, 0, 0, .9);
+}
+
 .barra{/*Maneja la linea de input*/
   display: block;
   position: relative;
@@ -225,8 +324,8 @@ input:focus~.barra::before{/*Maneja efectos de las lineas*/
   width: 105%;
 }
 
-.btn_link{/*Maneja el boton*/
-  background: #162938;
+.btn_cancelar{/*Maneja el boton cancelar*/
+  background: #FFA07A;
   border: none;
   display: block;
   width: 80%;
@@ -240,13 +339,180 @@ input:focus~.barra::before{/*Maneja efectos de las lineas*/
   font-size: 20px;
 
 }
-.btn_link:hover{/*Maneja el efecto del boton*/
+.btn_cancelar:hover{/*Maneja el efecto del boton cancelar*/
   background:transparent;
-  border: 4px solid #162938;
+  border: 4px solid #FFA07A;
+}
+.btn_guardar{/*Maneja el boton registrar del formulario*/
+  background: #20B2AA;
+  border: none;
+  display: block;
+  width: 80%;
+  margin: 10px auto;
+  color: white;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.4s ease-in-out;
+  text-decoration: none;
+  font-size: 20px;
+
+}
+.btn_guardar:hover{/*Maneja el efecto del boton registrar del formulario*/
+  background:transparent;
+  border: 4px solid #20B2AA;
 }
 
+a{
+  text-decoration: none;
+}
+/*? FIN MODAL REGISTRAR*/
 
-/*^ Fin Contenido */
+/** MODAL EDITAR*/
+.modalEditar{/*Maneja el contenedor del div*/
+  position:absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .6s .3s;/*Le da el efecto de aparecer al modal*/
+  --transform: translateY(-170vh) ;
+  --transition: transform .5s;
+  
+}
+.modal--showEditar{/*Activa el modal cuando oprimimos el boton*/
+  opacity: 1;
+  pointer-events: unset;
+  transition: opacity .6s;
+  --transform: translateY(0) ;
+  --transition: transform .6s .3s;
+}
+.modal_bodyEditar{
+  text-align: center;
+  position: relative;
+  height: 45rem;
+  width: 30rem;
+  background:rgba(0, 0, 0, .4);
+  border: 2px solid rgba(255, 255, 255, .7);
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  box-shadow: 7px 13px 37px rgba(0, 0, 0, .7);
+  display: block;
+  align-items: center;
+  justify-content: center;
+  margin: 20rem 30rem;
+  border-bottom: 5px solid white;
+  transform: var(--transform);
+  transition: var(--transition);
+
+}
+.btn_cancelarEditar{/*Maneja el boton cancelar*/
+  background: #FFA07A;
+  border: none;
+  display: block;
+  width: 80%;
+  margin: 10px auto;
+  color: white;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.6s ease-in-out;
+  text-decoration: none;
+  font-size: 20px;
+
+}
+.btn_cancelarEditar:hover{/*Maneja el efecto del boton cancelar*/
+  background:transparent;
+  border: 4px solid #FFA07A;
+}
+/**FIN MODAL EDITAR*/
+
+/*TODO MODAL ELIMINAR */
+
+.modalEliminar{/*Maneja el contenedor del div*/
+  position:absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .6s .3s;/*Le da el efecto de aparecer al modal*/
+  --transform: translateY(-100vh) ;
+  --transition: transform .5s;
+  
+}
+.modal--showEliminar{/*Activa el modal cuando oprimimos el boton*/
+  opacity: 1;
+  pointer-events: unset;
+  transition: opacity .6s;
+  --transform: translateY(0) ;
+  --transition: transform .6s .3s;
+}
+.modal_bodyEliminar{
+  text-align: center;
+  position: relative;
+  height: 15rem;
+  width: 35rem;
+  background:rgba(0, 0, 0, .4);
+  border: 2px solid rgba(255, 255, 255, .7);
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  box-shadow: 7px 13px 37px rgba(0, 0, 0, .7);
+  display: block;
+  align-items: center;
+  justify-content: center;
+  margin: 20rem 30rem;
+  border-bottom: 5px solid white;
+  transform: var(--transform);
+  transition: var(--transition);
+
+}
+.btn_cancelarEliminar{/*Maneja el boton cancelar*/
+  background: #FFA07A;
+  border: none;
+  display: block;
+  width: 80%;
+  margin: 10px auto;
+  color: white;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.6s ease-in-out;
+  text-decoration: none;
+  font-size: 20px;
+
+}
+.btn_cancelarEliminar:hover{/*Maneja el efecto del boton cancelar*/
+  background:transparent;
+  border: 4px solid #FFA07A;
+}
+.btn_eliminar{/*Maneja el boton eliminar*/
+  background: #DC143C;
+  border: none;
+  display: block;
+  width: 80%;
+  margin: 10px auto;
+  color: white;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.4s ease-in-out;
+  text-decoration: none;
+  font-size: 20px;
+
+}
+.btn_eliminar:hover{/*Maneja el efecto del boton eliminar*/
+  background:transparent;
+  border: 4px solid #DC143C;
+}
+/*TODO FIN MODAL ELIMINAR*/
+/*! ****FIN SECCION MODALES*****/
+
 
 /*^ Pie de Pagina */
 footer{/*Maneja todo el contenedor*/

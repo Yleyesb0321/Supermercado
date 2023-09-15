@@ -7,5 +7,4 @@ $clave = "";
 $bd = "supermegaplus";
 
 $conectar = new Mysqli($host, $user, $clave, $bd);
-
 ?>

@@ -6,9 +6,9 @@
   box-sizing: border-box;
   font-family: 'Oswald', sans-serif;
 }
-
-/*^ Loader de Carga*/
-.contenedor_loader{/*Maneja el contenedor del loading*/
+/*
+^ Loader de Carga
+.contenedor_loader{/*Maneja el contenedor del loading
   background: transparent;
   backdrop-filter: blur(150px);
   width: 100%;
@@ -25,7 +25,7 @@
   height: 100px;
   border-radius: 100%;
 
-  /*Para centralo en la pantalla*/
+  /*Para centralo en la pantalla
   position: absolute;
   top: 0;
   left: 0;
@@ -34,12 +34,12 @@
   margin: auto;
   animation: load .5s linear infinite;
 }
-@keyframes load {/*Maneja la animacion*/
+@keyframes load {/*Maneja la animacion
   from {transform: rotate(0deg);}
   to {transform: rotate(360deg);}
 }
-/*^ Fin Loader de Carga*/
-
+^ Fin Loader de Carga
+*/
 body{
   justify-content: center;
   align-items: center;
@@ -49,7 +49,7 @@ body{
   background-size: cover;
   background-position: center;
 }
-/*/
+
 /*^ Encabezado */
 header{
   top: 0;
@@ -75,53 +75,37 @@ h1{
   text-align: center;
   user-select: none;
 }
+a{
+  text-decoration: none;
+}
+.user{
+  color: #f1c70b;
+}
 
 /*^ Fin Encabezado */
 
 /*^ Nav */
-.nav a{
-  position: relative;
-  color:  #f5faf9; 
-  font-weight: bold;
-  font-size: 1.7em;
-  text-decoration: none;
-  margin-left: 40px;
-}
-.nav a::after{/*Maneja la barra debajo de los links*/
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 100%;
-  height: 3px;
-  background: #fff;
-  border-radius: 5px;
-  transform-origin: right;
-  transform: scaleX(0);
-  transition: transform .5s;
-}
-.nav a:hover::after{/*Maneja el efcto de las barras debajo de los links*/
-  transform-origin: left;
-  transform: scaleX(1);
-}
+
 .nav .btn_logout{/*Maneja el boton de cerrar sesion*/
-  width: 150px;
-  height: 50px;
-  background: transparent;
-  border: 2px solid #fff;
-  outline: none;
-  border-radius: 15px;
+  background: #d63031;
+  border: none;
+  width: 95px;
+  margin: 10px;
+  color: white;
+  height: 40px;
   cursor: pointer;
-  font-size: 1.3em;
-  color: #fff;
-  font-weight: 500;
-  margin-left: 40px;
-  transition: .5s;
+  border-radius: 10px;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  
 }
 .nav .btn_logout:hover{
-  background: #fff;
-  color: #162938;
+  background: transparent;
+  border: 3px solid #d63031;
 }
+
 /*^ Fin Nav */
 
 /*^ Contenido */

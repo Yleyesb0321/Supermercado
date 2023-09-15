@@ -75,37 +75,19 @@ h1{
   text-align: center;
   user-select: none;
 }
+.user{
+  color: #f1c70b;
+}
+.img {
+  margin: 10px;
+}
 
 /*^ Fin Encabezado */
 
 /*^ Nav */
-.nav a{
-  position: relative;
-  color:  #f5faf9; 
-  font-weight: bold;
-  font-size: 1.7em;
-  text-decoration: none;
-  margin-left: 40px;
-}
-.nav a::after{/*Maneja la barra debajo de los links*/
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 100%;
-  height: 3px;
-  background: #fff;
-  border-radius: 5px;
-  transform-origin: right;
-  transform: scaleX(0);
-  transition: transform .5s;
-}
-.nav a:hover::after{/*Maneja el efcto de las barras debajo de los links*/
-  transform-origin: left;
-  transform: scaleX(1);
-}
+
 .nav .btn_logout{/*Maneja el boton de cerrar sesion*/
-  width: 150px;
+  width: 55px;
   height: 50px;
   background: transparent;
   border: 2px solid #fff;
@@ -116,12 +98,13 @@ h1{
   color: #fff;
   font-weight: 500;
   margin-left: 40px;
-  transition: .5s;
+  
 }
 .nav .btn_logout:hover{
-  background: #fff;
-  color: #162938;
+  /*background: #f1c70b;*/
+  background: #20B2AA;
 }
+
 /*^ Fin Nav */
 
 /*^ Contenido */

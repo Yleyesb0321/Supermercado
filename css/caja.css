@@ -75,37 +75,16 @@ h1{
   text-align: center;
   user-select: none;
 }
+.user{
+  color: #f1c70b;
+}
 
 /*^ Fin Encabezado */
 
 /*^ Nav */
-.nav a{
-  position: relative;
-  color:  #f5faf9; 
-  font-weight: bold;
-  font-size: 1.7em;
-  text-decoration: none;
-  margin-left: 40px;
-}
-.nav a::after{/*Maneja la barra debajo de los links*/
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 100%;
-  height: 3px;
-  background: #fff;
-  border-radius: 5px;
-  transform-origin: right;
-  transform: scaleX(0);
-  transition: transform .5s;
-}
-.nav a:hover::after{/*Maneja el efcto de las barras debajo de los links*/
-  transform-origin: left;
-  transform: scaleX(1);
-}
+
 .nav .btn_logout{/*Maneja el boton de cerrar sesion*/
-  width: 150px;
+  width: 55px;
   height: 50px;
   background: transparent;
   border: 2px solid #fff;
@@ -119,8 +98,11 @@ h1{
   transition: .5s;
 }
 .nav .btn_logout:hover{
-  background: #fff;
-  color: #162938;
+  color: #fff;
+  background: #162938;
+}
+.img{
+  margin: 10px;
 }
 /*^ Fin Nav */
 
@@ -148,9 +130,9 @@ h1{
   margin-top: 50px;
 }
 
-.container_caja{/*Maneja el div del pagos*/
+.container_caja{/*Maneja el div de la caja*/
   position: relative;
-  height: 12rem;
+  height: 20rem;
   width: 70rem;
   background:transparent;
   border: 2px solid rgba(255, 255, 255, .5);
@@ -162,9 +144,15 @@ h1{
   justify-content: center;
   margin: 20px .5rem;
   border-bottom: 5px solid white;
-  transform: scale(1);
-  overflow:hidden;
-  transition: transform .5s ease;
+
+}
+.form_login{/*Maneja el contenedor de la form*/
+  width: 100%;
+  margin: auto;
+}
+.login-form{/*Maneja el div del input*/
+  position:relative;
+  margin: 45px;
 }
 
 .caja_subtitle{/*Maneja el titulo del login*/
@@ -172,23 +160,36 @@ h1{
   font-weight: bold;
   color: #f7f2f2;
 }
-
-.form_login{/*Maneja el contenedor de la form*/
+input{/*Maneja el cuadro de texto del input*/
+  background: none;
+  color: #c6c6c6;
+  font-size: 18px;
+  padding: 10px 5px;
+  display: block;
   width: 100%;
-  margin: auto;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid white;
+}
+input:focus{/*Maneja el efecto del input*/
+  outline: none;
+  color: white;
+}
+label{/*Maneja los nombres de los input*/
+  color: white;
+  font-size: 25px;
+  left: 5px;
+  top: 1px;
+  transition: 0.5s ease-in-out all;
+  pointer-events: none;
 }
 
-.login-form{/*Maneja el div del input*/
-  position:relative;
-  margin: 45px;
-}
-
-.btn_pagar{/*Maneja el boton*/
+.btn_link{/*Maneja el boton*/
   background: #162938;
   border: none;
   display: block;
-  width: 80%;
-  margin: 10px auto;
+  width: 150%;
+  margin: 10px;
   color: white;
   height: 40px;
   cursor: pointer;
@@ -198,11 +199,23 @@ h1{
   font-size: 20px;
 
 }
-.btn_pagar:hover{/*Maneja el efecto del boton*/
+.btn_link:hover{/*Maneja el efecto del boton*/
   background:transparent;
   border: 4px solid #162938;
 }
-
+.col{
+  display: flex;
+  width: 175%;
+  color: #f7f2f2;
+  justify-content: space-between;
+  align-items: center;
+}
+.items{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #f7f2f2;
+}
 
 /*^ Fin Contenido */
 
